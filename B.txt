@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main(){
+   int a, b, c, qu, z, p = 0;
+   cin >> a >> b;
+   for (int i = a; i <= b; i++){
+       if ((i % 2) == 0){
+           c = 1;
+           qu = round(sqrt(i));
+           for (int j = 2; j < qu; j++){
+            if ((i % j) == 0){
+               if ((j % 2) == 0){
+                    c++;
+                }
+                z = i / j;
+                if ((z % 2) == 0 && (j != z)){
+                    c++;
+                }
+                if (c > 3) break;
+           }
+       }
+       if (c == 3){
+           p = 1;
+           cout << i << endl;
+            }
+        }
+    }
+      if(p == 0)
+      cout << 0;
+
+}

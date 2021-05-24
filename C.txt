@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+using namespace std;
+int main(){
+   int k = 1, maximum = 0;
+   string s, simv;
+   ifstream in ("input.txt");
+   while(getline(in, s)){
+    for(int i = 0; i < s.size(); i++){
+        if( s[i] == s[i + 1]){
+            k++;
+        } else {
+            if(k > maximum){
+                maximum = k;
+                simv = s[i];
+            }
+            k = 1;
+    }
+    }
+   }
+   in.close();
+   cout << simv << " " << maximum << endl;
+    return 0;
+}
+
